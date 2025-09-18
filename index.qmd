@@ -268,6 +268,7 @@ simpleCoinDAG.add_edge("X", "W")
 #| label: fig-simple-coin-dag
 #| fig-cap: Generative DAG model for the simple coin flip game showing the relationship between coin flip outcome and winnings
 #| echo: false
+#| python.reticulate: false
 simpleCoinDAG.show()
 ```
 
@@ -376,6 +377,7 @@ timeSeriesDAG.add_plate([-5, 0.5, 9, 1.0], label="t = 1, ..., T", shift=-0.1)
 #| label: fig-timeseries-dag
 #| fig-cap: Generative DAG model for time-series account balance simulation showing how balance evolves sequentially over multiple periods
 #| echo: false
+#| python.reticulate: false
 timeSeriesDAG.show()
 ```
 
