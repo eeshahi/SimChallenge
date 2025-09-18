@@ -6,6 +6,8 @@ format:
 execute:
   echo: true
   eval: true
+  python:
+    reticulate: false
 ---
 
 # 🎲 Simulation Challenge - Monte Carlo Analysis
@@ -33,8 +35,10 @@ Imagine you are offered the following game and given a $1,000 budget in a specia
 ### Generative DAG Model for the Investment Game
 
 ```{python}
+#| label: fig-investment-dag
+#| fig-cap: Generative DAG model for the investment game showing how wealth evolves over time through coin flips
 #| echo: false
-#| include: false
+#| python.reticulate: false
 import daft
 
 # Create the DAG directly without custom class
@@ -56,12 +60,8 @@ investmentDAG.add_edge("Ct", "Wt")
 
 # Add plate around time-dependent nodes
 investmentDAG.add_plate([-2, 0.5, 7.8, 1.0], label="t = 1, ..., N", shift=-0.1)
-```
 
-```{python}
-#| label: fig-investment-dag
-#| fig-cap: Generative DAG model for the investment game showing how wealth evolves over time through coin flips
-#| echo: false
+# Display the DAG
 investmentDAG.show()
 ```
 
@@ -246,6 +246,7 @@ Let's start with a basic coin flip simulation to understand the mechanics:
 ```{python}
 #| echo: false
 #| include: false
+#| python.reticulate: false
 import daft
 
 # Create the DAG for simple coin flip game
@@ -308,6 +309,7 @@ sim_data
 #| label: simple-sim-python
 #| fig-cap: Python simulation of coin flip game
 #| echo: true
+#| python.reticulate: false
 
 import numpy as np
 import pandas as pd
@@ -346,6 +348,7 @@ Now let's simulate how an account balance changes over multiple periods:
 ```{python}
 #| echo: false
 #| include: false
+#| python.reticulate: false
 import daft
 
 # Create the DAG for time-series simulation
@@ -451,6 +454,7 @@ time_series_data
 #| label: timeseries-sim-python
 #| fig-cap: Python time-series simulation of account balance
 #| echo: true
+#| python.reticulate: false
 
 import numpy as np
 import pandas as pd
@@ -592,6 +596,7 @@ summary_stats
 #| label: distribution-sim-python
 #| fig-cap: Python probability distribution of final balances
 #| echo: true
+#| python.reticulate: false
 
 import numpy as np
 import pandas as pd
@@ -653,4 +658,4 @@ print(f"Median balance: ${median_balance:,.2f}")
 print(f"Probability above initial: {prob_above_initial:.3f}")
 ```
 
-:::i ski
+:::
