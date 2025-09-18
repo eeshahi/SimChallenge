@@ -1,0 +1,15 @@
+---
+title: "Simulation Challenge"
+subtitle: "Generative Models and Monte Carlo Simulation"
+format:
+  html: default
+execute:
+  echo: true
+  eval: true
+---
+
+# 🎲 Simulation Challenge - Monte Carlo Analysis
+
+## Challenge Overview
+
+**Your Mission:** Create a comprehensive Quarto document that simulates one or two investment strategies, analyzes the results, and demonstrates your ability to present counter-intuitive findings compellingly. Then render the document to HTML and deploy it via GitHub Pages from a new repository called "simulationChallenge."
