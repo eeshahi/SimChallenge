@@ -153,7 +153,7 @@ investmentDAG.show()
 
 **Answer:** 100 simulations were run for the modified strategy (betting exactly 50% of balance each round) using object-oriented matplotlib. The resulting distribution plot is embedded below.
 
-![](modified_strategy_distribution.png){fig-cap="Distribution of final account balances from 100 simulations of modified strategy (50% betting) with OO matplotlib"}
+![](modified_strategy_distribution.png){fig-cap="Distribution of final account balances from 100 simulations of modified strategy (50% betting) with OO matplotlib - linear scale with values >$10,000 grouped"}
 
 **Modified Strategy Results:**
 - Probability of ending above $10,000: **1.0%**
@@ -166,7 +166,7 @@ investmentDAG.show()
 - **P(Balance > $10,000): 1.0% vs 6.0%** → **LOWER** in modified strategy
 - **P(Balance > $1,000): 45.0% vs 31.0%** → **HIGHER** in modified strategy
 
-**Analysis:** The modified strategy shows a classic risk-return trade-off. By only betting 50% of the balance, it creates a "safety net" that prevents total ruin (only 1% catastrophic losses vs 43% in original) and improves the probability of staying above $1,000. However, this conservative approach severely limits upside potential, reducing the chance of reaching $10,000+ from 6% to just 1%. The strategy prioritizes capital preservation over explosive growth, demonstrating how position sizing fundamentally changes risk-return characteristics.
+**Analysis:** The modified strategy shows a classic risk-return trade-off. The linear-scale histogram with smaller buckets clearly reveals the distribution's characteristics: most outcomes cluster around the $1,000 median (orange and green bars), with very few extreme values. The single simulation above $10,000 is grouped at the threshold, representing just 1% of all paths. By only betting 50% of the balance, it creates a "safety net" that prevents total ruin (only 1% catastrophic losses vs 43% in original) and improves the probability of staying above $1,000. However, this conservative approach severely limits upside potential, reducing the chance of reaching $10,000+ from 6% to just 1%. The strategy prioritizes capital preservation over explosive growth, demonstrating how position sizing fundamentally changes risk-return characteristics.
 
 ### Modified Game Strategy
 
