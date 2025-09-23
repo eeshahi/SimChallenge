@@ -104,7 +104,7 @@ investmentDAG.show()
 ## The expected value of your account balance after 1 coin flip is $1050.
 
 2. **Expectation vs. Reality:** Is the expected value positive or negative? Do you expect your account to be worth more or less than $1,000 based on this result?
-## The expected value is positive. I expect my amount to be worth more than $1000.
+## The expected value is positive. I expect my amount to be worth more than 1000 dollars.
 
 3. **Single Simulation:** Run one simulation showing the dynamics of your account balance over time. Make an object-oriented matplotlib OR ggplot2 plot showing your simulated account balance over time (i.e. as you age). Comment on the results, are you happy?
 
