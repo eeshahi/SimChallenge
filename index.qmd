@@ -122,7 +122,7 @@ investmentDAG.show()
 
 **Answer:** 100 simulations were run using object-oriented matplotlib, showing the distribution of final account balances at age 55. The resulting figure is embedded below.
 
-![](multiple_simulations_distribution.png){fig-cap="Distribution of final account balances from 100 simulations (ages 25–55) with OO matplotlib"}
+![](multiple_simulations_distribution.png){fig-cap="Distribution of final account balances from 100 simulations (ages 25–55) with OO matplotlib - linear scale with values >$10,000 grouped"}
 
 **Key Results:**
 - Mean final balance: $2,379
@@ -131,7 +131,7 @@ investmentDAG.show()
 - Probability of ending above $10,000: 6.0%
 - 43% of simulations resulted in catastrophic losses (<$100)
 
-**Commentary:** Am I happy? No—this is deeply concerning. While the mean suggests profitability, the median reveals the harsh reality: most people lose money. The distribution is heavily right-skewed with extreme volatility (std dev = $6,574). This demonstrates the ergodicity problem: mathematical expectation is positive, but typical individual outcomes are devastating. The 31% success rate means 69% of people face financial ruin, highlighting why simulation is crucial for understanding real-world risk.
+**Commentary:** Am I happy? No—this is deeply concerning. The linear-scale histogram with smaller buckets clearly shows the distribution's true nature: a massive concentration of catastrophic losses (red bars <$100) and moderate losses (orange bars $100-$1,000), with only a few profitable outcomes (green bars >$1,000). The 6 simulations above $10,000 are grouped together, but even this "success" represents just 6% of all paths. While the mean suggests profitability, the median reveals the harsh reality: most people lose money. This demonstrates the ergodicity problem: mathematical expectation is positive, but typical individual outcomes are devastating. The 31% success rate means 69% of people face financial ruin, highlighting why simulation is crucial for understanding real-world risk.
 
 ### Questions to Answer for 95% Grade on Challenge
 
