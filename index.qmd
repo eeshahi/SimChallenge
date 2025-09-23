@@ -1,6 +1,6 @@
 ---
 title: "Simulation Challenge"
-"Eesha Shahi :)"
+author: "Eesha Shahi :)"
 subtitle: "Generative Models and Monte Carlo Simulation"
 format:
   html: default
