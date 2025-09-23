@@ -108,6 +108,13 @@ investmentDAG.show()
 
 3. **Single Simulation:** Run one simulation showing the dynamics of your account balance over time. Make an object-oriented matplotlib OR ggplot2 plot showing your simulated account balance over time (i.e. as you age). Comment on the results, are you happy?
 
+**Answer:** A single object-oriented matplotlib simulation was run (ages 25–55) starting from $1,000. The resulting figure is embedded below.
+
+![](single_simulation_plot.png){fig-cap="Single simulation of account balance (ages 25–55) with OO matplotlib"}
+
+**Commentary:** The path ends at approximately $0.84 after 30 years (−99.9%), with 9 heads and 21 tails. Despite a positive expected value per flip, multiplicative compounding and volatility drag dominate typical trajectories—this is an instance of the ergodicity problem. Am I happy? No—this outcome is catastrophic and highlights why relying on expectation alone is misleading.
+
+
 ### Questions to Answer for 85% Grade on Challenge
 
 4. **Multiple Simulations:** Run 100 simulations modelling the dynamics of your account balance over time. Make an object-oriented matplotlib OR ggplot2 plot showing a probability distribution of the 100 simulatedaccount balance at age 55. Comment on the results, are you happy? Why or why not?
