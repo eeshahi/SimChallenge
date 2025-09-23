@@ -271,6 +271,9 @@ simpleCoinDAG.add_node("W", "Winnings\n$W = 100$ if $X = 1$ else $-100$", x=1, y
 
 # Add edge showing the relationship
 simpleCoinDAG.add_edge("X", "W")
+
+# Display the DAG
+simpleCoinDAG.show()
 ```
 
 ```{python}
@@ -278,7 +281,7 @@ simpleCoinDAG.add_edge("X", "W")
 #| fig-cap: Generative DAG model for the simple coin flip game showing the relationship between coin flip outcome and winnings
 #| echo: false
 #| python.reticulate: false
-simpleCoinDAG.show()
+None
 ```
 
 **Key Difference from Investment Game:** Unlike the investment game DAG (@fig-investment-dag) which models wealth evolution over multiple time periods with multiplicative changes, this simple coin flip DAG represents a single-period game with additive winnings. The investment game shows how wealth compounds over time ($W_t = 1.5 \times W_{t-1}$ or $W_t = 0.6 \times W_{t-1}$), while this simple game shows fixed winnings ($W = +100$ or $W = -100$) based on a single coin flip outcome.
@@ -371,6 +374,7 @@ timeSeriesDAG.add_node("B0", "Initial Balance\n$B_0 = 1000$", x=2, y=2.5, aspect
 # Time t nodes
 timeSeriesDAG.add_node("Ct", "Coin Flip t\n$C_t \\sim \\text{Bernoulli}(0.5)$", x=-3, y=1, aspect=4, scale=1.6,
                       plot_params={'facecolor': 'aliceblue'})
+
 timeSeriesDAG.add_node("Bt", "Balance t\n$B_t = B_{t-1} + 100$ if $C_t = 1$\n$B_t = B_{t-1} - 100$ if $C_t = 0$", x=2, y=1, scale=1.6, aspect=4,
                       alternate=True, plot_params={'facecolor': 'aliceblue'})
 
@@ -380,6 +384,9 @@ timeSeriesDAG.add_edge("Ct", "Bt")
 
 # Add plate around time-dependent nodes
 timeSeriesDAG.add_plate([-5, 0.5, 9, 1.0], label="t = 1, ..., T", shift=-0.1)
+
+# Display the DAG
+timeSeriesDAG.show()
 ```
 
 ```{python}
@@ -387,7 +394,7 @@ timeSeriesDAG.add_plate([-5, 0.5, 9, 1.0], label="t = 1, ..., T", shift=-0.1)
 #| fig-cap: Generative DAG model for time-series account balance simulation showing how balance evolves sequentially over multiple periods
 #| echo: false
 #| python.reticulate: false
-timeSeriesDAG.show()
+None
 ```
 
 **Key Difference from Simple Coin Flip Game:** Unlike the simple coin flip DAG (@fig-simple-coin-dag) which represents a single-period game, this time-series DAG models sequential balance evolution over multiple periods. Each period's balance depends on the previous period's balance plus the current coin flip outcome. The simple game shows independent winnings per flip, while this model shows cumulative balance changes where $B_t = B_{t-1} + \Delta_t$ and $\Delta_t = +100$ or $-100$ based on the coin flip.
