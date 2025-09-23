@@ -4,10 +4,11 @@ subtitle: "Generative Models and Monte Carlo Simulation"
 format:
   html: default
 execute:
-  echo: true
+  echo: false
   eval: true
   python:
     reticulate: false
+
 ---
 
 # 🎲 Simulation Challenge - Monte Carlo Analysis
@@ -119,13 +120,53 @@ investmentDAG.show()
 
 4. **Multiple Simulations:** Run 100 simulations modelling the dynamics of your account balance over time. Make an object-oriented matplotlib OR ggplot2 plot showing a probability distribution of the 100 simulatedaccount balance at age 55. Comment on the results, are you happy? Why or why not?
 
+**Answer:** 100 simulations were run using object-oriented matplotlib, showing the distribution of final account balances at age 55. The resulting figure is embedded below.
+
+![](multiple_simulations_distribution.png){fig-cap="Distribution of final account balances from 100 simulations (ages 25–55) with OO matplotlib"}
+
+**Key Results:**
+- Mean final balance: $2,379
+- Median final balance: $206  
+- Probability of ending above $1,000: 31.0%
+- Probability of ending above $10,000: 6.0%
+- 43% of simulations resulted in catastrophic losses (<$100)
+
+**Commentary:** Am I happy? No—this is deeply concerning. While the mean suggests profitability, the median reveals the harsh reality: most people lose money. The distribution is heavily right-skewed with extreme volatility (std dev = $6,574). This demonstrates the ergodicity problem: mathematical expectation is positive, but typical individual outcomes are devastating. The 31% success rate means 69% of people face financial ruin, highlighting why simulation is crucial for understanding real-world risk.
+
 ### Questions to Answer for 95% Grade on Challenge
 
 5. **Probability Analysis:** Based on the 100 simulations above, what is the probability that your account balance will be greater than $1,000 at age 55?
 
+**Answer:** Based on the 100 simulations conducted above, the probability that your account balance will be greater than $1,000 at age 55 is **31.0%**.
+
+**Detailed Analysis:**
+- Out of 100 simulations, 31 ended with a balance above $1,000
+- This means 69% of simulations resulted in losses relative to the initial investment
+- The distribution shows that most people (69%) face financial ruin in this investment strategy
+- Only about 1 in 3 people would end up better off than they started
+
+**Interpretation:** This low probability (31%) demonstrates the high risk nature of this investment strategy. Despite having a positive expected value mathematically, the vast majority of individual outcomes are unfavorable, highlighting the critical difference between mathematical expectation and real-world individual experience—the core concept of the ergodicity problem in economics.
+
 ### Questions to Answer for 100% Grade on Challenge
 
 6. **Strategy Comparison:** Run 100 simulations for the modified game strategy shown below in @exm-ErgodicityEconomicsExampleModified. What is the probability that your account balance will be greater than $10,000 at age 55? Is this probability higher or lower than the probability in the original game?
+
+**Answer:** 100 simulations were run for the modified strategy (betting exactly 50% of balance each round) using object-oriented matplotlib. The resulting distribution plot is embedded below.
+
+![](modified_strategy_distribution.png){fig-cap="Distribution of final account balances from 100 simulations of modified strategy (50% betting) with OO matplotlib"}
+
+**Modified Strategy Results:**
+- Probability of ending above $10,000: **1.0%**
+- Probability of ending above $1,000: **45.0%**
+- Mean final balance: $2,012
+- Median final balance: $1,000
+- Only 1% of simulations resulted in catastrophic losses (<$100)
+
+**Comparison with Original Strategy:**
+- **P(Balance > $10,000): 1.0% vs 6.0%** → **LOWER** in modified strategy
+- **P(Balance > $1,000): 45.0% vs 31.0%** → **HIGHER** in modified strategy
+
+**Analysis:** The modified strategy shows a classic risk-return trade-off. By only betting 50% of the balance, it creates a "safety net" that prevents total ruin (only 1% catastrophic losses vs 43% in original) and improves the probability of staying above $1,000. However, this conservative approach severely limits upside potential, reducing the chance of reaching $10,000+ from 6% to just 1%. The strategy prioritizes capital preservation over explosive growth, demonstrating how position sizing fundamentally changes risk-return characteristics.
 
 ### Modified Game Strategy
 
